@@ -5,14 +5,20 @@ import java.util.Vector;
  */
 public class Percorso{
     protected Vector<Tratto> tratti;
+    private Vector<Integer> pericolosita = null;
 
     /**
      * metodo costruttore
      */
     public Percorso(int lenght, int maxPericolosita){
+        Tratto tratto;
         this.tratti = new Vector<>();
-        for(int i = 0; i < lenght; i++)
-            this.add(new Tratto(maxPericolosita));
+        this.pericolosita = new Vector<>();
+        for(int i = 0; i < lenght; i++) {
+            tratto = new Tratto(maxPericolosita);
+            this.add(tratto);
+            this.pericolosita.add(tratto.getPericolosita());
+        }
     }
 
     /**
@@ -45,5 +51,9 @@ public class Percorso{
                 dmg += tratti.get(i).danno();
         }
         return dmg;
+    }
+
+    public int getPericolosita(int i) {
+        return pericolosita.get(i);
     }
 }
