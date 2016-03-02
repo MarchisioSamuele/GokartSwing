@@ -22,4 +22,8 @@ public class Tratto {
     public int danno() {
         return random.nextInt(pericolosita+1);
     }
+
+    public int getPericolosita() {
+        return this.pericolosita;
+    }
 }
