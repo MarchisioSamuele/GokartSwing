@@ -68,6 +68,10 @@ public class Gokart {
         return this.id;
     }
 
+    public void resetId() {
+        this.lastId = 0;
+    }
+
     /**
      * @return una stringa contenente le informazioni sul kart
      */
